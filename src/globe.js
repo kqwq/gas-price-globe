@@ -17,15 +17,24 @@ const colorScale = scaleSequential(interpolateYlOrRd)
 colorScale.domain([0, 1])
 
 const fetchLiveData = async() => {
-  let baseUrl = `https://lister.theplanetdiscord.com/api/v1`
+  let baseUrl = `https://lister.theplanetdiscord.com/api/v1/gas`
   let backupUrl = `https://cdn.jsdelivr.net/gh/kqwq/gas-price-globe/src/data`
 
-  let testRes = await fetch(`${baseUrl}/isOnline.txt`)
-  if (testRes.ok) {
-    console.log('Using live data')
-  } else {
+  let failed = false
+  let testRes;
+  try {
+    testRes = await fetch(`${baseUrl}/isOnline.txt`)
+    if (testRes.ok) {
+      console.log('Using live data')
+    } else {
+      failed = true
+    }
+  } catch {
+    failed = true
+  }
+  if (failed) {
+    console.log('Using backup data')
     baseUrl = backupUrl
-    console.log('Using old data')
   }
 
   let res = await fetch(`${baseUrl}/price.json`)

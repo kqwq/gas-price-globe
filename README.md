@@ -11,5 +11,5 @@ https://kqwq.me/gas-price-globe/dist/
 ## API
 I made a separate repository for that. See [kqwq/gas-prices-api](https://github.com/kqwq/gas-price-api)
 Data sources
-[Gas prices](https://www.globalpetrolprices.com/gasoline_prices/)<br>
-[Exchange rate](https://exchangeratesapi.io/)
+- [Gas prices](https://www.globalpetrolprices.com/gasoline_prices/)
+- [Exchange rate](https://exchangeratesapi.io/)

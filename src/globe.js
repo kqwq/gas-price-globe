@@ -18,6 +18,16 @@ colorScale.domain([0, 1])
 
 const fetchLiveData = async() => {
   let baseUrl = `https://lister.theplanetdiscord.com/api/v1`
+  let backupUrl = `https://cdn.jsdelivr.net/gh/kqwq/gas-price-globe/src/data`
+
+  let testRes = await fetch(`${baseUrl}/isOnline.txt`)
+  if (testRes.ok) {
+    console.log('Using live data')
+  } else {
+    baseUrl = backupUrl
+    console.log('Using old data')
+  }
+
   let res = await fetch(`${baseUrl}/price.json`)
   let json = await res.json()
   priceData = json
@@ -26,7 +36,7 @@ const fetchLiveData = async() => {
   json = await res.json()
   exchangeRate = json
 
-  res = await fetch(`${baseUrl}/volume.json`)
+  res = await fetch(`${baseUrl}/volumeConversion.json`)
   json = await res.json()
   volumeConversion = json
 }

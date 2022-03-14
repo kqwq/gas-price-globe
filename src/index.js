@@ -1,4 +1,4 @@
-import { createGlobe, updateCountryTooltips, createDropdowns, updateLeaderboard } from "./globe"
+import { fetchLiveData, createGlobe, updateCountryTooltips, createDropdowns, updateLeaderboard } from "./globe"
 import './main.css'
 
 const init = async() => {

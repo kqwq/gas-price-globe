@@ -1,5 +1,7 @@
-# gas prices globe
+# gas-prices-globe
 
+## Live demo
+https://kqwq.me/gas-price-globe/dist/
 
 ## Run locally
 

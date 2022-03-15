@@ -17,7 +17,7 @@ const colorScale = scaleSequential(interpolateYlOrRd)
 colorScale.domain([0, 1])
 
 const fetchLiveData = async() => {
-  let baseUrl = `http://api.2727.ga:8005/api/v1/gas`
+  let baseUrl = `https://api.2727.ga:8005/api/v1/gas`
   let backupUrl = `https://cdn.jsdelivr.net/gh/kqwq/gas-price-globe/src/data`
 
   let failed = false

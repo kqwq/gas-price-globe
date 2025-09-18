@@ -23,6 +23,7 @@ const fetchLiveData = async() => {
   let failed = false
   let testRes;
   try {
+    throw new Error('this will not work');
     testRes = await fetch(`${baseUrl}/isOnline.txt`)
     if (testRes.ok) {
       console.log('Using live data')
